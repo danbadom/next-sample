@@ -1,4 +1,5 @@
-FROM  node:10.18.0
+FROM  node:10-alpine
+
 # Setting working directory. All the path will be relative to WORKDIR
 WORKDIR /usr/src/app
 # Installing dependencies
