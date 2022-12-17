@@ -54,7 +54,7 @@ jobs:
       id: build-image
       env:
         ECR_REGISTRY: ${{ steps.login-ecr.outputs.registry }}
-        ECR_REPOSITORY: next-poc
+        ECR_REPOSITORY: prac-repo
         IMAGE_TAG: latest
       run: |
         # Build a docker container and
@@ -68,13 +68,13 @@ jobs:
       uses: aws-actions/amazon-ecs-render-task-definition@v1
       with:
         task-definition: next-poc.json
-        container-name: next-poc
+        container-name: Practice-Cont
         image: ${{ steps.build-image.outputs.image }}
 
     - name: Deploy Amazon ECS task definition
       uses: aws-actions/amazon-ecs-deploy-task-definition@v1
       with:
         task-definition: ${{ steps.task-def.outputs.task-definition }}
-        service: next-pocc
-        cluster: next-poc
+        service: prac-service
+        cluster: Cluster-Practice
         wait-for-service-stability: false
