@@ -1,10 +1,10 @@
 {
-    "family": "next-poc",
+    "family": "Practice",
     "executionRoleArn": "arn:aws:iam::496645848084:role/ecsTaskExecutionRole",
     "networkMode": "awsvpc",
     "containerDefinitions": [
         {
-            "name": "next-poc",
+            "name": "Practice-Cont",
             "image": "496645848084.dkr.ecr.us-east-1.amazonaws.com/next-poc:latest",
             "portMappings": [
                 {
