@@ -1,4 +1,4 @@
-FROM node:10.24.1
+FROM  ns8inc/nodeaws
 # Setting working directory. All the path will be relative to WORKDIR
 WORKDIR /usr/src/app
 # Installing dependencies
